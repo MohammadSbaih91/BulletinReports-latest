@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9965E3AA-9CAE-496A-A9BF-C087BF288A8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BulletinReport.DAL</RootNamespace>
+    <AssemblyName>BulletinReport.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomRepositories\AspNetRoleRepository.cs" />
+    <Compile Include="CustomRepositories\AspNetUserLoginRepository.cs" />
+    <Compile Include="CustomRepositories\AspNetUserRepository.cs" />
+    <Compile Include="CustomRepositories\BulletinRepository.cs" />
+    <Compile Include="CustomRepositories\LookupCategoryRepository.cs" />
+    <Compile Include="CustomRepositories\LookupRepository.cs" />
+    <Compile Include="CustomRepositories\ProcedureRepository.cs" />
+    <Compile Include="CustomRepositories\ProsecutorDutyRepository.cs" />
+    <Compile Include="Entities\AspNetRole.cs" />
+    <Compile Include="Entities\AspNetUser.cs" />
+    <Compile Include="Entities\AspNetUserClaim.cs" />
+    <Compile Include="Entities\AspNetUserLogin.cs" />
+    <Compile Include="Entities\BlockedIP.cs" />
+    <Compile Include="Entities\Bulletin.cs" />
+    <Compile Include="Entities\BulletinsDatabase.cs" />
+    <Compile Include="Entities\Culture.cs" />
+    <Compile Include="Entities\Department.cs" />
+    <Compile Include="Entities\Department_Type.cs" />
+    <Compile Include="Entities\Log.cs" />
+    <Compile Include="Entities\Lookup.cs" />
+    <Compile Include="Entities\LookupCategory.cs" />
+    <Compile Include="Entities\LookupCategoryCulture.cs" />
+    <Compile Include="Entities\LookupCulture.cs" />
+    <Compile Include="Entities\LookupsMapping.cs" />
+    <Compile Include="Entities\NotificaitonsHistory.cs" />
+    <Compile Include="Entities\Notification.cs" />
+    <Compile Include="Entities\PoliceOffice.cs" />
+    <Compile Include="Entities\PoliceOfficesGroup.cs" />
+    <Compile Include="Entities\Procedure.cs" />
+    <Compile Include="Entities\ProsecutorDuty.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserDepartment.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.4</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BulletinReport.Common\BulletinReport.Common.csproj">
+      <Project>{fcbb91a8-c98a-43d4-8223-922ff51aa326}</Project>
+      <Name>BulletinReport.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

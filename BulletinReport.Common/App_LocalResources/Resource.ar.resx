@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>من نحن </value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value> من نحن </value>
+  </data>
+  <data name="AboutUsItem1" xml:space="preserve">
+    <value>تقييم الإمتثال السريع</value>
+  </data>
+  <data name="AboutUsItem2" xml:space="preserve">
+    <value>مجموعة أدوات وثائق الأمن السيبراني</value>
+  </data>
+  <data name="AboutUsItem3" xml:space="preserve">
+    <value>منصة إدارة السياسات</value>
+  </data>
+  <data name="AboutUsParagraph" xml:space="preserve">
+    <value>نقدم لكم خدمات عامة مجانية ومدفوعة خصة بلأمن السبراني الخص لمنشآتكم , والعديد من وثائق التحقق والتأكد من فعالية الأدوات المستخدمة في المنشأة</value>
+  </data>
+  <data name="AboutUsText" xml:space="preserve">
+    <value>الان يمكنكم الاستفادة من خدماتنا الخاصة بالتقييم الأمني للمنشات والشركات </value>
+  </data>
+  <data name="ActionSuccessMessage" xml:space="preserve">
+    <value>نجحت العملية </value>
+  </data>
+  <data name="AddBaseQuestions" xml:space="preserve">
+    <value>إضافة السؤال الرئيسي</value>
+  </data>
+  <data name="AddQuestionAttachments" xml:space="preserve">
+    <value>إضافة مرفقات الضابط</value>
+  </data>
+  <data name="AddQuestions" xml:space="preserve">
+    <value>إضافة السؤال الفرعي</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>شارع بغداد , عمان , ن م  535022</value>
+  </data>
+  <data name="AddSubElements" xml:space="preserve">
+    <value>إضافة أسئلة الاستبانة</value>
+  </data>
+  <data name="AddTemplate" xml:space="preserve">
+    <value>إضافة القالب</value>
+  </data>
+  <data name="AddTemplateAttachments" xml:space="preserve">
+    <value>إضافة مرفقات القالب</value>
+  </data>
+  <data name="AddTemplateQuestion" xml:space="preserve">
+    <value>إضافة سؤال على الاستبانة</value>
+  </data>
+  <data name="AddToolkit" xml:space="preserve">
+    <value>إضافة لأدوات</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>كل الحقوق محفوظة  .</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>الإجابة</value>
+  </data>
+  <data name="AttachmentName" xml:space="preserve">
+    <value>اسم المرفق</value>
+  </data>
+  <data name="Attachments" xml:space="preserve">
+    <value>المرفقات</value>
+  </data>
+  <data name="BaseClause" xml:space="preserve">
+    <value>الضابط الأساسي</value>
+  </data>
+  <data name="BaseQuestion" xml:space="preserve">
+    <value>السؤال الرئيسي</value>
+  </data>
+  <data name="BaseQuestionNameAr" xml:space="preserve">
+    <value>السؤال في اللغة العربية</value>
+  </data>
+  <data name="BaseQuestionNameEn" xml:space="preserve">
+    <value>السؤال في اللغة الانجليزية</value>
+  </data>
+  <data name="PartyNationality" xml:space="preserve">
+    <value>جنسية صاحب البلاغ</value>
+  </data>
+  <data name="BulletinType" xml:space="preserve">
+    <value>نوع البلاغ</value>
+  </data>
+  <data name="BaseQuestions" xml:space="preserve">
+    <value>أسئلة الاستبانة الرئيسية</value>
+  </data>
+  <data name="BaseQuestionsDetails" xml:space="preserve">
+    <value>معلومات السؤال الرئيسي</value>
+  </data>
+  <data name="BaseQuestionsSubs" xml:space="preserve">
+    <value>الاسئلة الفرعية للسؤال الرئيسي</value>
+  </data>
+  <data name="BuildPolicyManagementPlatfrom" xml:space="preserve">
+    <value>بناء منصة إدارة السياسات</value>
+  </data>
+  <data name="BuildQuestionnaire" xml:space="preserve">
+    <value>بناء اطار العمل</value>
+  </data>
+  <data name="BuildQuestionnaireQuestions" xml:space="preserve">
+    <value>إضافة الاسئلة للاستبانة</value>
+  </data>
+  <data name="BuildToolkit" xml:space="preserve">
+    <value>بناء الأدوات</value>
+  </data>
+  <data name="BulletinPoNumber" xml:space="preserve">
+    <value>رقم هاتف الضابط</value>
+  </data>
+  <data name="BusinessPackage" xml:space="preserve">
+    <value>حزمة الإعمال</value>
+  </data>
+  <data name="BusinessPackage2" xml:space="preserve">
+    <value>الحزمة المميزة</value>
+  </data>
+  <data name="BuyNow" xml:space="preserve">
+    <value>اشترك الان</value>
+  </data>
+  <data name="Call" xml:space="preserve">
+    <value>إبدأ العمل الآن</value>
+  </data>
+  <data name="CallContent" xml:space="preserve">
+    <value>اتصل بنا وخذ خدماتنا التي تساعدك في العثور على نتيجة تقييم الأمن السيبراني لمؤسستك</value>
+  </data>
+  <data name="CallContentbtn" xml:space="preserve">
+    <value>إبدأ العمل الآن</value>
+  </data>
+  <data name="CallUs" xml:space="preserve">
+    <value>اتصل بنا</value>
+  </data>
+  <data name="Clause" xml:space="preserve">
+    <value>الضابط</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="ComplianceAssessmentResult" xml:space="preserve">
+    <value>نتائج الإمتثال ( التقييم ) </value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="ConsultationServiceRequest" xml:space="preserve">
+    <value>طلب الخدمات من فريق الأمن السيبراني</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="ContactText" xml:space="preserve">
+    <value>تواصل مع فريق العمل في أي وقت </value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>المحتوى</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>حقوق الملكية </value>
+  </data>
+  <data name="CreateBulletin" xml:space="preserve">
+    <value>إضافة تقرير استلام بلاغ</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>المستخدم</value>
+  </data>
+  <data name="CreatedDate" xml:space="preserve">
+    <value>تاريخ الإنشاء</value>
+  </data>
+  <data name="CreateNewAccount" xml:space="preserve">
+    <value>تسجيل مستخدم جديد</value>
+  </data>
+  <data name="CreateQuestionnaireFailed" xml:space="preserve">
+    <value>خطأ في الاضافة , الرجاء المحاولة مرة أخرى</value>
+  </data>
+  <data name="CreateQuestionnaireSucces" xml:space="preserve">
+    <value>تم التسجيل بنجاح</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="DeleteAttachments" xml:space="preserve">
+    <value>حذف المرفق</value>
+  </data>
+  <data name="DeleteBaseQuestions" xml:space="preserve">
+    <value>حذف السؤال الرئيسي</value>
+  </data>
+  <data name="DeleteQuestionnaireFailed" xml:space="preserve">
+    <value>لم تتم العملية الرجاء المحاولة مرة أخرى</value>
+  </data>
+  <data name="DeleteQuestionnaireSucces" xml:space="preserve">
+    <value>تمت عملية حذف القالب بنجاح</value>
+  </data>
+  <data name="DeleteQuestions" xml:space="preserve">
+    <value>حذف السؤال الفرعي</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>تفاصيل</value>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>رقم الوثيقة - الرقم المرجعي - التاريخ</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="EditBaseQuestions" xml:space="preserve">
+    <value>تعديل السؤال الرئيسي</value>
+  </data>
+  <data name="EditQuestions" xml:space="preserve">
+    <value>تعديل السؤال الفرعي</value>
+  </data>
+  <data name="EditTemplate" xml:space="preserve">
+    <value>تعديل القالب</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value> البريد الالكتروني   </value>
+  </data>
+  <data name="EmailContent" xml:space="preserve">
+    <value>contact@example.com</value>
+  </data>
+  <data name="EmailUs" xml:space="preserve">
+    <value>البريد الالكتروني</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>فشل في العملية </value>
+  </data>
+  <data name="FileUploadForm" xml:space="preserve">
+    <value>رفع الملفات</value>
+  </data>
+  <data name="FirstPage" xml:space="preserve">
+    <value>الصفحة الأولى</value>
+  </data>
+  <data name="Foot1" xml:space="preserve">
+    <value>خدماتنا 1</value>
+  </data>
+  <data name="PartyAge" xml:space="preserve">
+    <value>عمر صاحب البلاغ</value>
+  </data>
+  <data name="PartyName" xml:space="preserve">
+    <value>اسم صاحب البلاغ</value>
+  </data>
+  <data name="PartyNameAr" xml:space="preserve">
+    <value>اسم صاحب البلاغ باللغة العربية</value>
+  </data>
+  <data name="PartyOtherDescription" xml:space="preserve">
+    <value>بيانات أخرى</value>
+  </data>
+  <data name="PleaseSelectDepartments" xml:space="preserve">
+    <value>الرجاء اختيار النيابة المستلمة للبلاغ</value>
+  </data>
+  <data name="Departments" xml:space="preserve">
+    <value>النيابة المستلمة للبلاغ</value>
+  </data>
+  <data name="ProcedureTime" xml:space="preserve">
+    <value>وقت الإجراء</value>
+  </data>
+  <data name="Foot2" xml:space="preserve">
+    <value>خدماتنا 1</value>
+  </data>
+  <data name="Foot3" xml:space="preserve">
+    <value>خدماتنا 1</value>
+  </data>
+  <data name="Foot4" xml:space="preserve">
+    <value>خدماتنا 1</value>
+  </data>
+  <data name="Foot5" xml:space="preserve">
+    <value>خدماتنا 1</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>إعادة تهيئة كلمة المرور</value>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>مجانا</value>
+  </data>
+  <data name="Free1" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Free2" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Free3" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Free4" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Free5" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="GeneralServiceHead1" xml:space="preserve">
+    <value>تقييم الإمتثال السريع</value>
+  </data>
+  <data name="GeneralServiceHead2" xml:space="preserve">
+    <value>مجموعة أدوات وثائق الأمن السيبراني</value>
+  </data>
+  <data name="GeneralServiceHead3" xml:space="preserve">
+    <value>منصة إدارة السياسات</value>
+  </data>
+  <data name="GeneralServiceText1" xml:space="preserve">
+    <value>تحقق في أقل من 15 دقيقة من مدى امتثال شركتك لمعيار ISO27001 ، وكذلك مقدار الوقت الذي تحتاجه لتحقيق الامتثال الكامل والشهادة.</value>
+  </data>
+  <data name="GeneralServiceText2" xml:space="preserve">
+    <value>تأكد من أنك على المسار الصحيح باستخدام مجموعة أدوات المستندات القياسية ISO27001</value>
+  </data>
+  <data name="GeneralServiceText3" xml:space="preserve">
+    <value>تبسيط عملية إدارة السياسة الخاصة بك
+يجب أن تكون إدارة سياساتك والبقاء في الامتثال سلسًا</value>
+  </data>
+  <data name="GenericError" xml:space="preserve">
+    <value>حدث خطأ</value>
+  </data>
+  <data name="GetResults" xml:space="preserve">
+    <value>إظهار النتيجة</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>إبدأ الان</value>
+  </data>
+  <data name="HideTable" xml:space="preserve">
+    <value>إخفاء الاسئلة الفرعية</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>صفحة البداية</value>
+  </data>
+  <data name="ImplementationPeriodAccurateExpectedTime" xml:space="preserve">
+    <value>تاريخ انتهاء التنفيذ المتوقع</value>
+  </data>
+  <data name="ImplementationPeriodTime" xml:space="preserve">
+    <value>مدة التنفيذ المتوقعة</value>
+  </data>
+  <data name="IsMandatory" xml:space="preserve">
+    <value>ضابط مطلوب</value>
+  </data>
+  <data name="LastPage" xml:space="preserve">
+    <value>الصفحة الاخيرة</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>......</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>الدخول</value>
+  </data>
+  <data name="ManagePaymentMethods" xml:space="preserve">
+    <value>إدارة عمليات الدفع</value>
+  </data>
+  <data name="ManageUsers" xml:space="preserve">
+    <value>إدارة المستخدمين</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>تم ارسال البريد الالكتروني , شكرا لكم </value>
+  </data>
+  <data name="month" xml:space="preserve">
+    <value>/ شهريا</value>
+  </data>
+  <data name="PrintBulletin" xml:space="preserve">
+    <value>طباعة البلاغ</value>
+  </data>
+  <data name="months" xml:space="preserve">
+    <value>أشهر</value>
+  </data>
+  <data name="NameOfDuties" xml:space="preserve">
+    <value>المناوبين</value>
+  </data>
+  <data name="DutiesName" xml:space="preserve">
+    <value>أسماء الأعضاء المناوبين هاتفيا في حالة عدم الرد</value>
+  </data>
+  <data name="DutiesTime" xml:space="preserve">
+    <value>وقت المناوبة</value>
+  </data>
+  <data name="DutiesShiftTime" xml:space="preserve">
+    <value>الشفت</value>
+  </data>
+  <data name="NextPage" xml:space="preserve">
+    <value>الصفحة التالية</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>لا يوجد بيانات</value>
+  </data>
+  <data name="OnlyArabicCharacters" xml:space="preserve">
+    <value>أحرف عربية فقط</value>
+  </data>
+  <data name="OnlyEnglishCharacters" xml:space="preserve">
+    <value>احرف انجليزي فقط</value>
+  </data>
+  <data name="Oporations" xml:space="preserve">
+    <value>العمليات</value>
+  </data>
+  <data name="OurAddress" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="OurNewsletter" xml:space="preserve">
+    <value>اخر الاخبار</value>
+  </data>
+  <data name="OurNewsletterDetails" xml:space="preserve">
+    <value>اشترك الان وتابع اخر الاخبار واستفد من اخر الخدمات مجانا عبر البريد الالكتروني الخاص بك</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>خدماتنا </value>
+  </data>
+  <data name="Paid1Details1" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Paid1Details2" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Paid1Details3" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Paid1Details4" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Paid1Details5" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Paid2Details1" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Paid2Details2" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Paid2Details3" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Paid2Details4" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Paid2Details5" xml:space="preserve">
+    <value>تفاصيل الخدمة 1</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>حالة الدفع </value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>: الهاتف  </value>
+  </data>
+  <data name="PleasePoliceDepartment" xml:space="preserve">
+    <value>الرجاء اختيار المركز الأمني</value>
+  </data>
+  <data name="AccedentNumber" xml:space="preserve">
+    <value>رقم البلاغ ( الحادث )</value>
+  </data>
+  <data name="AccedentSample" xml:space="preserve">
+    <value>٠٢-٢٠٢٤-١٧-أق-١٢</value>
+  </data>
+  <data name="OfficerRank" xml:space="preserve">
+    <value>الرتبة</value>
+  </data>
+  <data name="PoliceDepartment" xml:space="preserve">
+    <value>المركز الأمني</value>
+  </data>
+  <data name="BulletinPoName" xml:space="preserve">
+    <value>اسم الضابط</value>
+  </data>
+  <data name="OfficerPhoneNumber" xml:space="preserve">
+    <value>رقم هاتف الضابط</value>
+  </data>
+  <data name="PleaseSelectOfficerRanks" xml:space="preserve">
+    <value>الرجاء اختيار الرتبة</value>
+  </data>
+  <data name="PleaseSelectQuastionnaireType" xml:space="preserve">
+    <value>الرجاء اختيار نوع الاستبانة</value>
+  </data>
+  <data name="PleaseSelectSubTemplateType" xml:space="preserve">
+    <value>نوع القالب الفرعي</value>
+  </data>
+  <data name="PleaseSelectTemplate" xml:space="preserve">
+    <value>الرجاء اختيار الاتبانة التي تريد الاضافة عليها</value>
+  </data>
+  <data name="PleaseSelectTemplateType" xml:space="preserve">
+    <value>نوع القالب</value>
+  </data>
+  <data name="PleaseSelectToolkitType" xml:space="preserve">
+    <value>الرجء اختيار نوع الأدوات</value>
+  </data>
+  <data name="PolicyManagementServices" xml:space="preserve">
+    <value>خدمات إدارة السياسات</value>
+  </data>
+  <data name="Portfolio" xml:space="preserve">
+    <value>Portfolio</value>
+  </data>
+  <data name="PreviousPage" xml:space="preserve">
+    <value>الصفحة السابقة</value>
+  </data>
+  <data name="Pricing" xml:space="preserve">
+    <value>الأسعار</value>
+  </data>
+  <data name="PricingText" xml:space="preserve">
+    <value>يمكنكم الإستفادة الان من الخدمات المجانية والمدفوعة والتي تساعدكم في تقييم المستوى الأمني للمنشأة الخاصة بكم </value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>سياسة الخصوصية</value>
+  </data>
+  <data name="Procedures" xml:space="preserve">
+    <value>الاجراءات</value>
+  </data>
+  <data name="QuestionAttachments" xml:space="preserve">
+    <value>مرفقات الضابط</value>
+  </data>
+  <data name="QuestionnaireAccurateComplianceResult" xml:space="preserve">
+    <value>النتيجة الدقيقة للإمتثال</value>
+  </data>
+  <data name="QuestionnaireComplianceResult" xml:space="preserve">
+    <value>نتيجة الامتثال للاستبيان</value>
+  </data>
+  <data name="QuestionsAr" xml:space="preserve">
+    <value>الضابط في اللغة العربية</value>
+  </data>
+  <data name="QuestionsDetails" xml:space="preserve">
+    <value>معلومات السؤال الفرعي</value>
+  </data>
+  <data name="QuestionsEn" xml:space="preserve">
+    <value>الضابط في اللغة الانجليزية</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>تسجيل المستخدم</value>
+  </data>
+  <data name="RegisterNewUser" xml:space="preserve">
+    <value>تسجيل مستخدم جديد</value>
+  </data>
+  <data name="Rememberme" xml:space="preserve">
+    <value>تذكر كلمة المرور</value>
+  </data>
+  <data name="ReportDate" xml:space="preserve">
+    <value>تاربخ البلاغ</value>
+  </data>
+  <data name="ReporterInformation" xml:space="preserve">
+    <value>تقارير استلام البلاغات</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>حقل الزامي</value>
+  </data>
+  <data name="Resources" xml:space="preserve">
+    <value>الموارد</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="SaveAsDraft" xml:space="preserve">
+    <value>حفظ كمسودة</value>
+  </data>
+  <data name="Selectfile" xml:space="preserve">
+    <value>إختر الملف</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>ارسال</value>
+  </data>
+  <data name="ServiceName" xml:space="preserve">
+    <value>اسم الخدمة</value>
+  </data>
+  <data name="ServiceRequestType" xml:space="preserve">
+    <value>نوع الخدمة</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>الخدمات</value>
+  </data>
+  <data name="ServicesHead" xml:space="preserve">
+    <value>الخدمات</value>
+  </data>
+  <data name="ServiceStatus" xml:space="preserve">
+    <value>حالة الخدمة</value>
+  </data>
+  <data name="SpService1" xml:space="preserve">
+    <value>تقييم الامتثال السريع</value>
+  </data>
+  <data name="SpService1hd" xml:space="preserve">
+    <value>تقييم الامتثال السريع - مجانًا</value>
+  </data>
+  <data name="SpService2" xml:space="preserve">
+    <value>مجموعة أدوات وثائق الأمن السيبراني</value>
+  </data>
+  <data name="SpService2hd" xml:space="preserve">
+    <value>مجموعة أدوات وثائق الأمن السيبراني</value>
+  </data>
+  <data name="SpService3" xml:space="preserve">
+    <value>منصة إدارة السياسات</value>
+  </data>
+  <data name="SpService3hd" xml:space="preserve">
+    <value>منصة إدارة السياسات</value>
+  </data>
+  <data name="SpService4" xml:space="preserve">
+    <value>مجموعة أدوات ISO27001 - مجموعة أدوات ISO 22301</value>
+  </data>
+  <data name="SpService4hd" xml:space="preserve">
+    <value>مجموعة أدوات ISO27001 - مجموعة أدوات ISO 22301</value>
+  </data>
+  <data name="SpService5" xml:space="preserve">
+    <value>مجموعة أدوات مؤسسة النقد العربي السعودي</value>
+  </data>
+  <data name="SpService5hd" xml:space="preserve">
+    <value>مجموعة أدوات مؤسسة النقد العربي السعودي</value>
+  </data>
+  <data name="SpService6" xml:space="preserve">
+    <value>مجموعة أدوات ECC</value>
+  </data>
+  <data name="SpService6hd" xml:space="preserve">
+    <value>مجموعة أدوات ECC</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>تمت العملية بنجاح</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>الفريق الإستشاري</value>
+  </data>
+  <data name="TemplateAttachments" xml:space="preserve">
+    <value>مرفقات القالب</value>
+  </data>
+  <data name="TemplateNameAr" xml:space="preserve">
+    <value>اسم القالب في اللغة العربية</value>
+  </data>
+  <data name="TemplateNameEn" xml:space="preserve">
+    <value>اسم القالب في اللغة الانجليزية</value>
+  </data>
+  <data name="Templates" xml:space="preserve">
+    <value>قائمة القوالب</value>
+  </data>
+  <data name="TemplateSubType" xml:space="preserve">
+    <value>نوع القالب الفرعي</value>
+  </data>
+  <data name="TemplateType" xml:space="preserve">
+    <value>نوع القالب</value>
+  </data>
+  <data name="Terms" xml:space="preserve">
+    <value>شروط الخدمة</value>
+  </data>
+  <data name="TheRememberme" xml:space="preserve">
+    <value>تذكر كلمة المرور</value>
+  </data>
+  <data name="ToolkitAttachments" xml:space="preserve">
+    <value>مرفقات الأدوات</value>
+  </data>
+  <data name="ToolkitServiceRequest" xml:space="preserve">
+    <value>استعراض أدوات التوثيق</value>
+  </data>
+  <data name="ToolkitServices" xml:space="preserve">
+    <value>أدوات الأمن السيبراني</value>
+  </data>
+  <data name="TotalPages" xml:space="preserve">
+    <value>عدد الصفحات</value>
+  </data>
+  <data name="TotalRecords" xml:space="preserve">
+    <value>نتائج البحث</value>
+  </data>
+  <data name="UpdateQuestionnaireFailed" xml:space="preserve">
+    <value>لم تتم العملية , الرجاء المحاولة مرة أخرى</value>
+  </data>
+  <data name="UpdateQuestionnaireSucces" xml:space="preserve">
+    <value>تمت عملية تحديث القالب بنجاح</value>
+  </data>
+  <data name="UploadFile" xml:space="preserve">
+    <value>رفع الملف</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>خدمات ذات صلة</value>
+  </data>
+  <data name="UseLocalAccounttoLogin" xml:space="preserve">
+    <value>الدخول الى النظام</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="UserServicesList" xml:space="preserve">
+    <value>الخدمات الخاصة للمستخدم</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bulletin Reports أهلا بك في  </value>
+  </data>
+  <data name="WelcomeUser" xml:space="preserve">
+    <value>أهلا بك سيد</value>
+  </data>
+  <data name="Who" xml:space="preserve">
+    <value>نحن فريق عمل إستشارات خدمات الأمن السيبراني</value>
+  </data>
+  <data name="YouAreNotAllowedToOpenThisTask" xml:space="preserve">
+    <value>You Are Not Allowed To Open This Task</value>
+  </data>
+  <data name="YourEmail" xml:space="preserve">
+    <value>البريد الالكتروني</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>الإسم</value>
+  </data>
+  <data name="BulletinDescription" xml:space="preserve">
+    <value>بيانات البلاغ</value>
+  </data>
+  <data name="Prosecutor" xml:space="preserve">
+    <value>اسم وكيل النيابة مستلم البلاغ</value>
+  </data>
+  <data name="TheIncidentHasBeenMoved" xml:space="preserve">
+    <value>تم الانتقال للواقعة</value>
+  </data>
+  <data name="TheIncidentHasNotBeenMoved" xml:space="preserve">
+    <value>لم يتم الانتقال للواقعة</value>
+  </data>
+  <data name="ReportTime" xml:space="preserve">
+    <value>وقت البلاغ</value>
+  </data>
+  <data name="CallsCount" xml:space="preserve">
+    <value>عدد المكالمات</value>
+  </data>
+  <data name="SelectProsecutorShiftTime" xml:space="preserve">
+    <value>الرجاء اختيار شفت الدوام</value>
+  </data>
+  <data name="SelectProsecutor" xml:space="preserve">
+    <value>الرجاء اختيار العضو المناوب في حالة عدم الرد</value>
+  </data>
+  <data name="ConfirmPasswordError" xml:space="preserve">
+    <value>كلمة المرور وتأكيد كلمة المرور غير متطابقين</value>
+  </data>
+  <data name="FirstNameAr" xml:space="preserve">
+    <value>الاسم الأول</value>
+  </data>
+  <data name="FirstNameEn" xml:space="preserve">
+    <value>الاسم الأول باللغة الانجليزية</value>
+  </data>
+  <data name="LastNameAr" xml:space="preserve">
+    <value>اسم العائلة</value>
+  </data>
+  <data name="LastNameEn" xml:space="preserve">
+    <value> اسم العائلة باللغة الانجليزية</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>رقم الهاتف المحمول</value>
+  </data>
+  <data name="PassportId" xml:space="preserve">
+    <value>رقم جواز السفر</value>
+  </data>
+  <data name="PasswordError" xml:space="preserve">
+    <value>يجب أن يبلغ طول {0} {2} حرفًا على الأقل</value>
+  </data>
+  <data name="QatariId" xml:space="preserve">
+    <value>رقم الهوية </value>
+  </data>
+  <data name="CreateBulletinSucces" xml:space="preserve">
+    <value>تم انشاء البلاغ بنجاح</value>
+  </data>
+  <data name="PublicProsecutions" xml:space="preserve">
+    <value>الادعاء العام</value>
+  </data>
+  <data name="BulletinsList" xml:space="preserve">
+    <value>قائمة البلاغات</value>
+  </data>
+  <data name="OfficerName" xml:space="preserve">
+    <value>وكيل النيابة</value>
+  </data>
+  <data name="BulletinDateFrom" xml:space="preserve">
+    <value>من تاريخ</value>
+  </data>
+  <data name="BulletinDateTo" xml:space="preserve">
+    <value>الى تاريخ</value>
+  </data>
+  <data name="BulletinNumber" xml:space="preserve">
+    <value>رقم الحادث</value>
+  </data>
+  <data name="DeleteFilter" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>المستخدمين</value>
+  </data>
+  <data name="DeleteBulletin" xml:space="preserve">
+    <value>حذف البلاغ</value>
+  </data>
+  <data name="DeleteBulletinSuccessfully" xml:space="preserve">
+    <value>تم حذف البلاغ بنجاح</value>
+  </data>
+  <data name="UpdateBulletin" xml:space="preserve">
+    <value>تعديل البلاغ</value>
+  </data>
+  <data name="UpdateBulletinSuccessfully" xml:space="preserve">
+    <value>تمت عملية تعديل البلاغ بنجاح</value>
+  </data>
+  <data name="LDAPLogin" xml:space="preserve">
+    <value>تسجيل دخول</value>
+  </data>
+  <data name="LoginWithAD" xml:space="preserve">
+    <value>تسجيل دخول</value>
+  </data>
+  <data name="WebLogin" xml:space="preserve">
+    <value>تسجيل الدخول على شبكة الإنترنت</value>
+  </data>
+  <data name="LDapLoginFailed" xml:space="preserve">
+    <value>بيانات اعتماد LDAP غير صالحة.</value>
+  </data>
+  <data name="CreateBulletinReport" xml:space="preserve">
+    <value>تقارير استلام البلاغات</value>
+  </data>
+
+  <!-- Login Error Msgs -->
+  <data name="UserNameIsEmpty" xml:space="preserve">
+    <value>من فضلك أدخل اسم المستخدم</value>
+  </data>
+  <data name="UserPassIsEmpty" xml:space="preserve">
+    <value>من فضلك أدخل كلمة المرور</value>
+  </data>
+  <data name="PlzSelectProsecutor" xml:space="preserve">
+    <value>الرجاء تحديد وكيل النيابة</value>
+  </data>
+  <data name="PlzSelectProsecutor" xml:space="preserve">
+    <value>Please select prosecutor</value>
+  </data>
+  <data name="BulletinReportAttachment" xml:space="preserve">
+    <value>مرفق النشرة البلاغات</value>
+  </data>
+</root>

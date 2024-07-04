@@ -1,0 +1,129 @@
+﻿@using BulletinReport.Common;
+@using BulletinReport.Common.App_LocalResources;
+
+<style>
+    .box { min-width: 300px; min-height: 360px; }
+
+    .services .icon-box h4 { font-weight: 700; margin-bottom: 15px; font-size: 42px !important; }
+
+    #bx1 #bx2 #bx3 #bx4 #bx5 #bx6 { min-width: 340px; min-height: 340px; display: -ms-flexbox !important; display: inline-grid !important; }
+
+    .alert-danger { margin-bottom: 76px !important; max-width: 1058px !important; margin-left: 17px !important; color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; }
+
+    .alert-success { margin-bottom: 76px; max-width: 1058px; margin-left: 17px; color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>نشرة البلاغات</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    @*<link href="~/assets/img/favicon.png" rel="icon">*@
+    <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,home|Raleway:300,300i,400,400i,500,500i,600,600i,700,home|Poppins:300,300i,400,400i,500,500i,600,600i,700,home" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="~/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/aos/aos.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    @{
+        var doDisable = false;
+        if (User == null || User.Identity == null)
+        {
+            ViewBag.UserName = "";
+        }
+
+        if (User != null && User.Identity != null)
+        {
+
+            ViewBag.UserName = User.Identity.Name;
+            doDisable = true;
+        }
+
+    }
+
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    @if (System.Threading.Thread.CurrentThread.CurrentCulture.Name.ToLower().Contains(Constants.Languages.Arabic.ToLower()))
+    {
+        <link href="~/css/style.arabic.css" rel="stylesheet">
+    }
+    else
+    {
+        <link href="~/css/style.css" rel="stylesheet">
+    }
+</head>
+<body>
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+    @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
+    @{
+        var rawQueryString = HttpContext.Current.Request.ServerVariables["query_string"];
+    }
+
+    <!-- ======= Hero Section ======= -->
+    <section id="body" class="d-flex align-items-center">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+        </div>
+    </section><!-- End Hero -->
+    <main id="main">
+        <!-- ======= About Section ======= -->
+        <section>
+            <div class="container">
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div id="msg">
+                            @TempData["Success"].ToString()
+                        </div>
+                    </div>
+                }
+                else if (TempData["Error"] != null)
+                {
+                    <div class="alert alert-danger alert-dismissible show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div id="msg">
+                            @TempData["Error"].ToString()
+                        </div>
+                    </div>
+                }
+                @RenderBody()
+            </div>
+        </section><!-- End About Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    <div id="preloader"></div>
+    <label id="preloaderDelay"></label>
+    <!-- Vendor JS Files -->
+    <script src="~/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="~/assets/vendor/php-email-form/validate.js"></script>
+    <script src="~/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="~/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="~/assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/assets/js/main.js"></script>
+
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+    @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

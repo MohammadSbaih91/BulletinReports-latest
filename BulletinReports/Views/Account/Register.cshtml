@@ -1,0 +1,81 @@
+﻿@model BulletinReports.Models.RegisterViewModel
+@using BulletinReport.Common;
+@using BulletinReport.Common.App_LocalResources;
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <section class="login_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="login">
+                        @*<h2>@Resource.Register</h2>*@
+                        <p class="login_subtext">@Resource.CreateNewAccount</p>
+                        <div class="login_form">
+                            <form>
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="Email" placeholder="@Resource.Email" name="Email">
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="UserName" placeholder="@Resource.UserName" name="UserName">
+                                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="Password" placeholder="@Resource.Password" name="Password">
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="ConfirmPassword" placeholder="@Resource.ConfirmPassword" name="ConfirmPassword">
+                                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="FirstNameAr" placeholder="@Resource.FirstNameAr" name="FirstNameAr">
+                                    @Html.ValidationMessageFor(m => m.FirstNameAr, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="LastNameAr" placeholder="@Resource.LastNameAr" name="LastNameAr">
+                                    @Html.ValidationMessageFor(m => m.LastNameAr, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="FirstNameEn" placeholder="@Resource.FirstNameEn" name="FirstNameEn">
+                                    @Html.ValidationMessageFor(m => m.FirstNameEn, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="LastNameEn" placeholder="@Resource.LastNameEn" name="LastNameEn">
+                                    @Html.ValidationMessageFor(m => m.LastNameEn, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="QatariId" placeholder="@Resource.QatariId" name="QatariId">
+                                    @Html.ValidationMessageFor(m => m.QatariId, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="Mobile" placeholder="@Resource.Mobile" name="Mobile">
+                                    @Html.ValidationMessageFor(m => m.Mobile, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="PassportId" placeholder="@Resource.PassportId" name="PassportId">
+                                    @Html.ValidationMessageFor(m => m.PassportId, "", new { @class = "text-danger" })
+                                </div>
+                                <button type="submit" class="btn btn-default">@Resource.Register</button>
+                            </form>
+                        </div>
+                        <div class="link"><a href="@Url.Action("Login","Account")">@Resource.Login</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

@@ -1,0 +1,218 @@
+﻿@model BulletinReports.Models.BulletinsViewModel.BulletinViewModel
+@using BulletinReport.Common;
+@using BulletinReport.Common.App_LocalResources;
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <section class="login_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="login">
+                        <div class="section-title">
+                            <h2>@Resource.CreateBulletin</h2>
+                        </div>
+                        <div class="section-title">
+                            <h2>@Resource.ReporterInformation </h2>
+                        </div>
+                        <div class="login_form">
+                            <form>
+                                <div class="container">
+                                    <br />
+                                    <!-- Text box and dropdown on the same line -->
+                                    <div class="form-row">
+                                        <div class="col-md-4">
+                                            <label for="">@Resource.ReportDate</label>
+                                            @*@Html.EditorFor(model => model.ReportDate, new { htmlAttributes = new { @class = "form-control" } })*@
+                                            <input type="datetime-local" name="ReportDate" class="form-control">
+                                            @Html.ValidationMessageFor(model => model.ReportDate, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="">@Resource.ReportDate</label>
+                                            @*@Html.EditorFor(model => model.ReportDate, new { htmlAttributes = new { @class = "form-control" } })*@
+                                            <input type="datetime-local" name="ReportDate" class="form-control">
+                                            @Html.ValidationMessageFor(model => model.ReportDate, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="">@Resource.BulletinPoNumber</label>
+                                            @Html.EditorFor(model => model.BulletinPoNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BulletinPoNumber, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <!-- Two textboxes on the same line -->
+                                    <div class="form-row">
+                                        <div class="col-md-4">
+                                            <label for="">@Resource.OfficerRank</label>
+                                            @{
+                                                List<SelectListItem> listOfficerRanks = new List<SelectListItem>();
+                                                foreach (var item in Model.OfficerRanks)
+                                                {
+                                                    listOfficerRanks.Add(new SelectListItem
+                                                    {
+                                                        Text = item.Value,
+                                                        Value = item.Id.ToString(),
+                                                        Selected = item.Id == Model.OfficerRank
+                                                    });
+                                                };
+                                            }
+                                            @Html.DropDownListFor(model => model.OfficerRanks, listOfficerRanks, Resource.PleaseSelectOfficerRanks, new { @class = "form-control" })
+                                            @Html.HiddenFor(model => model.OfficerRanks)
+                                            @Html.ValidationMessageFor(model => model.OfficerRanks, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <!-- One text box -->
+                                        <div class="col-md-4">
+                                            <label for="">@Resource.BulletinPoName</label>
+                                            @Html.EditorFor(model => model.BulletinPoName, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BulletinPoName, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="">@Resource.PoliceDepartment</label>
+                                            @{
+                                                List<SelectListItem> listtemptypes = new List<SelectListItem>();
+                                                foreach (var item in Model.PoliceOffices)
+                                                {
+                                                    listtemptypes.Add(new SelectListItem
+                                                    {
+                                                        Text = item.Value,
+                                                        Value = item.Id.ToString(),
+                                                        Selected = item.Id == Model.PoliceOffice
+                                                    });
+                                                };
+                                            }
+                                            @Html.DropDownListFor(model => model.PoliceOffices, listtemptypes, Resource.PleasePoliceDepartment, new { @class = "form-control" })
+                                            @Html.HiddenFor(model => model.PoliceOffices)
+                                            @Html.ValidationMessageFor(model => model.PoliceOffices, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <!-- One text area -->
+                                    <div class="form-group">
+                                        <label for="">@Resource.BulletinDescription</label>
+                                        <textarea class="form-control" name="BulletinDescription" rows="5" data-rule="required" data-msg="@Resource.BulletinDescription" placeholder="@Resource.BulletinDescription"></textarea>
+                                        @Html.ValidationMessageFor(model => model.BulletinDescription, "", new { @class = "text-danger" })
+                                    </div>
+                                    <br />
+                                    <!-- Two sets of two text boxes -->
+                                    <div class="form-row">
+                                        <div class="col-md-4">
+                                            <label for="">@Resource.PartyName</label>
+                                            @Html.EditorFor(model => model.PartyName, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.OfficerPhoneNumber, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="">@Resource.PartyNameAr</label>
+                                            @Html.EditorFor(model => model.PartyNameAr, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BulletinType, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="">@Resource.PartyAge</label>
+                                            @Html.EditorFor(model => model.PartyAge, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.PartyAge, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <!-- One more text area -->
+                                    <div class="form-group">
+                                        <label for="">@Resource.PartyOtherDescription</label>
+                                        <textarea class="form-control" name="PartyOtherDescription" rows="5" data-rule="required" data-msg="@Resource.PartyOtherDescription" placeholder="@Resource.PartyOtherDescription"></textarea>
+                                    </div>
+                                    <br />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="login_form">
+                            <h2>@Resource.Procedures</h2>
+                            <form>
+                                <div class="container">
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="col-md-8 title-multiline">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Procedures header -->
+                                <!-- Text box and datetime picker on the same line -->
+                                <div class="form-row">
+                                    <div class="col-md-8">
+                                        <label for="">@Resource.Departments</label>
+                                        @{
+                                            List<SelectListItem> listDepartments = new List<SelectListItem>();
+                                            foreach (var item in Model.Departments)
+                                            {
+                                                listDepartments.Add(new SelectListItem
+                                                {
+                                                    Text = item.Value,
+                                                    Value = item.Id.ToString(),
+                                                    Selected = item.Id == Model.Department
+                                                });
+                                            };
+                                        }
+                                        @Html.DropDownListFor(model => model.Departments, listDepartments, Resource.PleaseSelectDepartments, new { @class = "form-control" })
+                                        @Html.HiddenFor(model => model.Departments)
+                                        @Html.ValidationMessageFor(model => model.Departments, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="">@Resource.ProcedureTime</label>
+                                        @Html.EditorFor(model => model.Procedures.ProcedureTime, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Procedures.ProcedureTime, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="form-row">
+                                    <div class="col-md-12">
+                                        <label for="">@Resource.Prosecutor</label>
+                                        @Html.EditorFor(model => model.Procedures.Prosecutor, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Procedures.Prosecutor, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <div class="form-check" style="display: flex; align-items: center;">
+                                            <input class="form-check-input" type="radio" id="radio1" name="radiogroup">
+                                            <label class="form-check-label" for="radio1">@Resource.TheIncidentHasNotBeenMoved</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check" style="display: flex; align-items: center;">
+                                            <input class="form-check-input" type="radio" id="radio2" name="radiogroup">
+                                            <label class="form-check-label" for="radio2">@Resource.TheIncidentHasBeenMoved</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="login_form">
+                            <div class="login_form">
+                                <h2>@Resource.NameOfDuties</h2>
+                                @if (Model.ProsecutorDuties != null)
+                                {
+                                    @Html.Partial("~/Views/Shared/Partials/_ProsecutorDuties.cshtml", Model.ProsecutorDuties)
+                                }
+                                <!-- Footer with document info -->
+                                <div class="text-center mt-4">
+                                    @Resource.DocumentNumber
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default">@Resource.CreateBulletin</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,182 @@
+﻿@using BulletinReport.Common;
+@using BulletinReport.Common.App_LocalResources;
+@using BulletinReports.PagedList.UIHelper
+@model IPagedListModel
+
+@{
+    Layout = null;
+}
+
+@if (Model == null || Model.TotalItems < 1 || Model.TotalPages < 2)
+{
+    return;
+}
+
+@{
+
+    //==== pager settings
+    string firstPageButtonText = "&laquo;";
+    string firstPageButtonTitle = "FirstPage" /*@Resource.FirstPage*/;
+
+    string previousPageButtonText = "&lsaquo;";
+    string previousPageButtonTitle = "PreviousPage" /*@Resource.PreviousPage*/;
+
+
+    string nextPageButtonText = "&rsaquo;";
+    string nextPageButtonTitle = "next" /*@Resource.NextPage*/;
+
+    string lastPageButtonText = "&raquo;";
+    string lastPageButtonTitle = "LastPage"/*@Resource.LastPage*/;
+
+
+    string disabledClassName = "disabled";
+
+    int numberOfPagesToDisplay = 5;
+
+    bool isFirstPage = Model.CurrentPage == 1;
+    bool isLastPage = Model.CurrentPage >= Model.TotalPages;
+
+    string pageinationContolId = Guid.NewGuid().ToString();
+
+    if (Model.TotalPages == 1)
+    {
+        return;
+    }
+}
+<div class="text-center">
+    <ul class="pagination" style="padding: initial;" id="@pageinationContolId">
+
+        <!--First button-->
+        <li title="@firstPageButtonTitle" aria-label="@firstPageButtonTitle" class="@(isFirstPage ? disabledClassName : String.Empty)">
+            @if (isFirstPage)
+            {
+                <span>@Html.Raw(firstPageButtonText)</span>
+            }
+            else
+            {
+                <a href="@String.Format(Model.UrlStringFormat, 1)"><span aria-hidden="true">@Html.Raw(firstPageButtonText)</span></a>
+            }
+        </li>
+
+        <!--Prev button-->
+        <li title="@previousPageButtonTitle" aria-label="@previousPageButtonTitle" class="@(isFirstPage ? disabledClassName : String.Empty)">
+            @if (isFirstPage)
+            {
+                <span aria-hidden="true">@Html.Raw(previousPageButtonText)</span>
+            }
+            else
+            {
+                <a href="@String.Format(Model.UrlStringFormat, Model.CurrentPage - 1)"><span aria-hidden="true">@Html.Raw(previousPageButtonText)</span></a>
+            }
+        </li>
+
+
+        <!--Current button-->
+        @{
+            int start = 0;
+            int end = 0;
+
+            int mid = (int)Math.Ceiling(numberOfPagesToDisplay / 2m);
+            start = Math.Min(Model.CurrentPage - mid + 1, Model.TotalPages - numberOfPagesToDisplay + 1);
+            if (start < 1)
+            {
+                start = 1;
+            }
+            end = Math.Min(start + numberOfPagesToDisplay - 1, Model.TotalPages);
+
+            for (int i = start; i <= end; i++)
+            {
+                if (i == Model.CurrentPage)
+                {
+                    <li class="active"><span>@Model.CurrentPage</span></li>
+                }
+                else
+                {
+                    <li><a href="@String.Format(Model.UrlStringFormat, i)">@i</a></li>
+                }
+            }
+        }
+
+        <!--Next button-->
+        <li title="@nextPageButtonTitle" aria-label="@nextPageButtonTitle" class="@(isLastPage ? disabledClassName : String.Empty)">
+            @if (isLastPage)
+            {
+                <span aria-hidden="true">@Html.Raw(nextPageButtonText)</span>
+            }
+            else
+            {
+                <a href="@String.Format(Model.UrlStringFormat, Model.CurrentPage + 1)"><span aria-hidden="true">@Html.Raw(nextPageButtonText)</span></a>
+            }
+        </li>
+
+        <!--Last button-->
+        <li title="@lastPageButtonTitle" aria-label="@lastPageButtonTitle" class="@(isLastPage ? disabledClassName : String.Empty)">
+            @if (isLastPage)
+            {
+                <span aria-hidden="true">@Html.Raw(lastPageButtonText)</span>
+            }
+            else
+            {
+                <a href="@String.Format(Model.UrlStringFormat, Model.TotalPages)"><span aria-hidden="true">@Html.Raw(lastPageButtonText)</span></a>
+            }
+        </li>
+
+    </ul>
+</div>
+
+<div class="text-center" style="margin-right:auto;direction:ltr;">
+    @Resource.TotalPages  @Model.TotalPages
+</div>
+
+<div class="text-center" style="margin-right:auto;direction:ltr;">
+    @Resource.TotalRecords  @Model.TotalItems
+</div>
+
+
+@if (!string.IsNullOrWhiteSpace(Model.ItemId))
+{
+    <script>
+
+
+        $(function () {
+
+            var _searchFilter = null;
+            var _serchclassName = "cchiPostSearchForm";
+
+            $('#@pageinationContolId.Trim() a').on('click', function (e) {
+
+                e.preventDefault();
+
+
+                var targetUrl = $(this).attr('href');
+                if (targetUrl != 'undefined' && targetUrl.length > 0) {
+
+                    //showLoader();
+
+                    _searchFilter = $('.' + _serchclassName).serialize();
+
+                    $.ajax({
+                        url: targetUrl,
+                        data: _searchFilter,
+                        type: 'POST',
+                        success: function (response) {
+                            $('#@Model.ItemId.Trim()').replaceWith(response);
+
+                        },
+                        error: function() {
+
+                        },
+                        complete: function () {
+                            //hideLoader();
+                        }
+                    });
+
+                }
+            });
+
+        });
+    </script>
+}
+
+
+

@@ -1,0 +1,70 @@
+﻿@using BulletinReports.Models
+@using BulletinReport.Common;
+@using BulletinReport.Common.App_LocalResources
+@model LoginViewModel
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<head>
+    <style>
+        .login_form .checkbox {
+            margin-bottom: 20px;
+            direction: rtl; /* margin-left: 900px; */
+        }
+
+          body {
+            background-image: url('@Url.Content("~/assets/img/Pattern.png")');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<section class="login_wrapper">
+    <div class="container">
+        <div class="tab-content mt-3" id="nav-tabContent">
+            <div class="tab-pane show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="login_form">
+                        <fieldset class="p-4 w-50 m-auto">
+                            @******* Logo *******@
+                            <div class="mb-4">
+                                <a href="/" class="logo">
+                                    <img id="lg" src="~/assets/img/PP_Logo.png" alt="" class="img-fluid m-auto d-block">
+                                </a>
+                            </div>
+                            <hr />
+                            @******** Title ********@
+                            <h2 class="mb-4">@Resource.LDAPLogin</h2>
+
+                            @******** Form Fields ********@
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group mb-4">
+                                <input type="text" class="form-control w-75 m-auto" id="LDAPUserName" placeholder="@Resource.UserName" name="UserName">
+                                @Html.ValidationMessageFor(m => m.UserName, @Resource.UserNameIsEmpty, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group mt-4">
+                                <input type="password" class="form-control w-75 m-auto" id="LDAPPassword" placeholder="@Resource.Password" name="Password">
+                                @Html.ValidationMessageFor(m => m.Password, @Resource.UserPassIsEmpty, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group pt-3">
+                                <button type="submit" class="btn btn-info w-50 m-auto">@Resource.LoginWithAD</button>
+                            </div>
+
+                        </fieldset>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+}

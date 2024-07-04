@@ -1,0 +1,188 @@
+﻿@model BulletinReports.Models.BulletinsViewModel.BulletinsViewModel
+@using Bulitten.Common;
+@using BulletinReport.Common.App_LocalResources;
+@{
+    ViewBag.Title = "Home Page";
+}
+<head>
+    <style>
+        .button-row { display: flex; justify-content: start; gap: 10px; }
+
+        .button-row .btn { padding: 7px 10px; margin: 0; font-size: 14px; border-radius: 7px; }
+    </style>
+    <script>
+        $(document).ready(function () {
+            // Reset button functionality
+            $("#resetFilters").click(function () {
+                // Clear all text inputs
+                $('input[type="text"]').val('');
+                $('input[type="date"]').val('');
+
+                // Reset all dropdown lists to the first option
+                $('select').each(function () {
+                    $(this).val($(this).find('option:first').val());
+                });
+
+                $('select#UserId').each(function () {
+                    $(this).remove();
+                });
+
+                $('table#tblBulletin tbody tr').remove();
+
+                // Prevent the form from submitting when clicking the reset button
+                return false;
+            });
+        });
+
+        function GetUserByDeptID(e) {
+            let dllPros = $('#UserId');
+            $.ajax({
+                url: '@Url.Action("GetUsersByDeptID", "Bulletin")',
+                type: 'GET',
+                data: { DeptID: e.target.value },
+                dataType: 'json',
+                success: function (users) {
+                    dllPros.empty();
+                    $.each(users, function (index, user) {
+                        dllPros.append($('<option></option>').val(user.id).text(user.name));
+                    });
+                },
+                error: function (xhr, status, error) {
+                    alert('Error: ' + error.message);
+                }
+            });
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+@using (Html.BeginForm("Index", "Bulletin", FormMethod.Post))
+{
+    <section class="main_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="login">
+                        <div class="form-row">
+                            <div class="section-title">
+                                <h3>@Resource.ReporterInformation</h3>
+                            </div>
+                        </div>
+                        <div class="login_form">
+                            <div class="container">
+                                <br />
+                                <!-- Text box and dropdown on the same line -->
+                                <div class="form-row">
+                                    <div class="col-md-4">
+                                        <label for="">@Resource.BulletinNumber</label>
+                                        @*@Html.EditorFor(model => model.ReportDate, new { htmlAttributes = new { @class = "form-control" } })*@
+                                        @Html.EditorFor(model => model.AccedentNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.AccedentNumber, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="">@Resource.PoliceDepartment</label>
+                                        @{
+                                            List<SelectListItem> listtemptypes = new List<SelectListItem>();
+                                            foreach (var item in Model.PoliceOffices)
+                                            {
+                                                listtemptypes.Add(new SelectListItem
+                                                {
+                                                    Text = item.Description,
+                                                    Value = item.ID.ToString(),
+                                                    Selected = item.ID == Model.PoliceOffice
+                                                });
+                                            };
+                                        }
+                                        @Html.DropDownListFor(model => model.PoliceOffice, listtemptypes, Resource.PleasePoliceDepartment, new { @class = "form-control" })
+                                        @Html.HiddenFor(model => model.PoliceOffice)
+                                        @Html.ValidationMessageFor(model => model.PoliceOffice, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="">@Resource.Departments</label>
+                                        @{
+                                            List<SelectListItem> listDepartments = new List<SelectListItem>();
+                                            foreach (var item in Model.Departments)
+                                            {
+                                                listDepartments.Add(new SelectListItem
+                                                {
+                                                    Text = item.Name,
+                                                    Value = item.ID.ToString(),
+                                                    Selected = item.ID == Model.Department
+                                                });
+                                            };
+                                        }
+                                        @Html.DropDownListFor(model => model.Department, listDepartments, Resource.PleaseSelectDepartments, new { @class = "form-control", @onchange = "GetUserByDeptID(event)" })
+                                        @Html.HiddenFor(model => model.Department)
+                                        @Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-row">
+
+                                    <div class="col-md-4">
+                                        <label for="">@Resource.BulletinDateFrom</label>
+                                        @*@Html.EditorFor(model => model.ReportDate, new { htmlAttributes = new { @class = "form-control" } })*@
+                                        @Html.EditorFor(model => model.BulletinDateFrom, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                                        @Html.ValidationMessageFor(model => model.BulletinDateFrom, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="">@Resource.BulletinDateTo</label>
+                                        @Html.EditorFor(model => model.BulletinDateTo, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                                        @Html.ValidationMessageFor(model => model.BulletinDateTo, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="">@Resource.Users</label>
+                                        @{
+                                            List<SelectListItem> listOfficerRanks = new List<SelectListItem>();
+                                            if (Model.DBUsers != null)
+                                            {
+                                                foreach (var item in Model.DBUsers)
+                                                {
+                                                    listOfficerRanks.Add(new SelectListItem
+                                                    {
+                                                        Text = item.Name,
+                                                        Value = item.LogonName.ToString(),
+                                                        //Selected = item.ID == Model.UserId
+                                                    });
+                                                };
+                                            }
+                                        }
+                                        @Html.DropDownListFor(model => model.UserId, listOfficerRanks, Resource.PleaseSelectOfficerRanks, new { @class = "form-control" })
+                                        @Html.HiddenFor(model => model.UserId)
+                                        @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <div class="form-row button-row">
+                                    <div class="col-2">
+                                        <button type="submit" class="btn btn-default w-100">@Resource.Search</button>
+                                    </div>
+                                    <div class="col-2">
+                                        <button id="resetFilters" class="btn btn-default w-100">@Resource.DeleteFilter</button>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="section-title">
+                                            <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("CreateBulletin", "Bulletin")';">
+                                                @Resource.CreateBulletin
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    @Html.Partial("~/Views/Shared/Partials/_BulletinsList.cshtml", Model.Bulletins)
+
+
+}

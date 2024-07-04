@@ -1,0 +1,151 @@
+﻿@using Bulitten.Common;
+@using BulletinReport.Common.App_LocalResources;
+@using BulletinReports.PagedList.UIHelper
+@model IEnumerable<BulletinReports.Models.BulletinsViewModel.BulletinViewModel>
+
+
+@{
+    Layout = null;
+}
+
+@if (Model == null || !Model.Any())
+{
+    <div class="text-center">
+        @Resource.NoData
+    </div>
+    return;
+}
+
+@{
+    var pagedListModel = (IPagedListModel)Model;
+    pagedListModel.ItemId = Guid.NewGuid().ToString();
+}
+
+
+
+@using (Html.BeginForm("Index", "Bulletin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div id="@pagedListModel.ItemId" role="treegrid" class="searchRequests cchi-grid">
+        <section class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="login">
+                            <h2>@Resource.BulletinsList</h2>
+                            @*<p class="login_subtext">@Resource.Employees</p>*@
+                            <div class="login_form">
+                                <form>
+                                    <section class="data_table_section">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="data_table_container" style="min-width:1024px;">
+                                                    <table id="tblBulletin" class="table table-bordered table-hover table-striped">
+                                                        <tr>
+                                                            <th>
+                                                                @Resource.BulletinNumber
+                                                            </th>
+                                                            <th>
+                                                                @Resource.BulletinPoName
+                                                            </th>
+                                                            <th>
+                                                                @Resource.BulletinDescription
+                                                            </th>
+                                                            <th>
+                                                                @Resource.PoliceDepartment
+                                                            </th>
+                                                            <th>
+                                                                @Resource.CreatedDate
+                                                            </th>
+                                                            <th>
+                                                                @Resource.Departments
+                                                            </th>
+                                                            <th>
+                                                                @Resource.OfficerPhoneNumber
+                                                            </th>
+                                                            <th>
+                                                                @Resource.CreatedBy
+                                                            </th>
+                                                            <th>
+                                                                @Resource.Procedures
+                                                            </th>
+                                                        </tr>
+                                                        @if (Model != null)
+                                                        {
+                                                            <tbody>
+                                                                @foreach (var item in Model)
+                                                                {
+                                                                    <tr>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.AccedentNumber)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.BulletinPoName)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.BulletinDescription)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.PoliceOfficeName)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.ReportDate)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.DepartmentName)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.BulletinPoNumber)
+                                                                        </td>
+                                                                        <td>
+                                                                            @Html.DisplayFor(modelItem => item.BulletinCreatedBy)
+                                                                        </td>
+                                                                        <td class="w-10">
+                                                                            <a href="@Url.Action("Viewer", "Bulletin", new { BtnID = item.Id })">
+                                                                                <img src="~/Files/img/print.png" class="command" alt="@Resource.PrintBulletin" title="@Resource.PrintBulletin" />
+                                                                            </a>
+                                                                            <a href="@Url.Action("DeleteBulletin", "Bulletin", new { BulletinId = item.Id })">
+                                                                                <img src="~/Files/img/delete.png" class="command" alt="@Resource.DeleteBulletin" title="@Resource.DeleteBulletin" />
+                                                                            </a>
+                                                                            <a href="@Url.Action("UpdateBulletin", "Bulletin", new { BulletinId = item.Id })">
+                                                                                <img src="~/Files/img/thumbnail_update.png" class="command" alt="@Resource.UpdateBulletin" title="@Resource.UpdateBulletin" />
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                }
+                                                            </tbody>
+                                                        }
+                                                        else
+                                                        {
+                                                            <tr>@Resource.NoData</tr>
+                                                        }
+                                                    </table>
+                                                    @Html.Partial("~/Views/Shared/_Pagination.cshtml", pagedListModel)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+}
+
+
+@*<script>
+          $(document).ready(function () {
+                    $("#chkboxheader").click(function () {
+                        debugger;
+                        if ($(this).is(":checked", true)) {
+                            $(".ckbox").prop("checked", true)
+                        }
+                        else {
+                            $(".ckbox").prop("checked", false)
+                        }
+                    });
+                });
+    </script>*@

@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletinReports", "BulletinReports\BulletinReports.csproj", "{F02F8760-7A2F-48BE-9535-0539A9A00334}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BulletinReport.DAL", "BulletinReport.DAL", "{29603BA6-A706-4A64-9C1D-56846D264550}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BulletinReport.BLL", "BulletinReport.BLL", "{DC238B24-82C4-40F2-98A7-912D05B48F3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BulletinReport.Common", "BulletinReport.Common", "{D2FC145E-1AFA-4885-A1B6-D820ED84528B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletinReport.Common", "BulletinReport.Common\BulletinReport.Common.csproj", "{FCBB91A8-C98A-43D4-8223-922FF51AA326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletinReport.DAL", "BulletinReport.DAL\BulletinReport.DAL.csproj", "{9965E3AA-9CAE-496A-A9BF-C087BF288A8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletinReport.BLL", "BulletinReport.BLL\BulletinReport.BLL.csproj", "{2F93EB96-2FA6-4008-AE34-B554C62DC70E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GCAP.DAL", "GCAP.DAL", "{1C8060CF-2F96-4FE2-AFAD-76956351ADAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCAP.DAL", "GCAP.DAL\GCAP.DAL.csproj", "{2E75490E-AEED-40FF-B4C3-EF413A9626DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F02F8760-7A2F-48BE-9535-0539A9A00334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F02F8760-7A2F-48BE-9535-0539A9A00334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F02F8760-7A2F-48BE-9535-0539A9A00334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F02F8760-7A2F-48BE-9535-0539A9A00334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCBB91A8-C98A-43D4-8223-922FF51AA326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCBB91A8-C98A-43D4-8223-922FF51AA326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCBB91A8-C98A-43D4-8223-922FF51AA326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCBB91A8-C98A-43D4-8223-922FF51AA326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9965E3AA-9CAE-496A-A9BF-C087BF288A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9965E3AA-9CAE-496A-A9BF-C087BF288A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9965E3AA-9CAE-496A-A9BF-C087BF288A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9965E3AA-9CAE-496A-A9BF-C087BF288A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F93EB96-2FA6-4008-AE34-B554C62DC70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F93EB96-2FA6-4008-AE34-B554C62DC70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F93EB96-2FA6-4008-AE34-B554C62DC70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F93EB96-2FA6-4008-AE34-B554C62DC70E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E75490E-AEED-40FF-B4C3-EF413A9626DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E75490E-AEED-40FF-B4C3-EF413A9626DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E75490E-AEED-40FF-B4C3-EF413A9626DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E75490E-AEED-40FF-B4C3-EF413A9626DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FCBB91A8-C98A-43D4-8223-922FF51AA326} = {D2FC145E-1AFA-4885-A1B6-D820ED84528B}
+		{9965E3AA-9CAE-496A-A9BF-C087BF288A8B} = {29603BA6-A706-4A64-9C1D-56846D264550}
+		{2F93EB96-2FA6-4008-AE34-B554C62DC70E} = {DC238B24-82C4-40F2-98A7-912D05B48F3D}
+		{2E75490E-AEED-40FF-B4C3-EF413A9626DB} = {1C8060CF-2F96-4FE2-AFAD-76956351ADAB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57E339FC-DB78-4097-871B-1FDD55CE0B4B}
+	EndGlobalSection
+EndGlobal
